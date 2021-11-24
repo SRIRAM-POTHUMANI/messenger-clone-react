@@ -25,7 +25,7 @@ function App() {
   //   })
   // }, [])
   const  sync = async ()=> {
-    await axios.get('https://messenger-clone-smaple.herokuapp.com/retrieve/conversation')
+    await axios.get('http://localhost:5000/retrieve/conversation')
     .then((res)=>{
       console.log(res.data);
       setMessages(res.data)
@@ -51,7 +51,7 @@ function App() {
 
   const sendMessage = (e) => {
     e.preventDefault()
-    axios.post('https://messenger-clone-smaple.herokuapp.com/save/messages',{
+    axios.post('http://localhost:5000/save/messages',{
       username: username,
       message: input,
       timestamp: Date.now()
